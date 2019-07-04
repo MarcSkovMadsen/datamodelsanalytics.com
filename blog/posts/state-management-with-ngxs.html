@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>My Notes on State Management with NGXS | Data, Models and Analytics Blog
+</title>
+  <link rel="canonical" href="../posts/state-management-with-ngxs.html">
+
+  <link rel="alternate" type="application/atom+xml" href="https://datamodelsanalytics.com/blog/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="https://datamodelsanalytics.com/blog/feeds/{slug}.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="../theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../theme/css/pygments/vs.min.css">
+  <link rel="stylesheet" href="../theme/css/style.css">
+
+
+<meta name="description" content="A colleague suggested I learn and use state management in Angular. These notes documents the steps and learnings.">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="..">
+            <img class="img-fluid" src=../images/home-bg.jpg alt="Data, Models and Analytics Blog">
+          </a>
+        </div>
+        <div class="col-sm-8">
+          <h1 class="title"><a href="..">Data, Models and Analytics Blog</a></h1>
+          <p class="text-muted">By Marc Skov Madsen, PhD (Math), CFA®, Lead Data Scientist Developer at Ørsted</p>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="fa fa-home" href="https://datamodelsanalytics.com" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-linkedin" href="https://www.linkedin.com/in/marcskovmadsen/" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-facebook" href="https://www.facebook.com/marc.skov.madsen" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-twitter" href="https://twitter.com/MarcSkovMadsen " target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-github" href="https://github.com/MarcSkovMadsen/ " target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-stack-overflow" href="http://stackoverflow.com/u/10227927" target="_blank"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>My Notes on State Management with NGXS
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+      <li class="list-inline-item text-muted" title="2018-03-01T00:00:00+01:00">
+        <i class="fa fa-clock-o"></i>
+        to 01 marts 2018
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="../category/notes.html">Notes</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="../tag/angular.html">#Angular</a>,         <a href="../tag/ngxs.html">#NGXS</a>,         <a href="../tag/state-management.html">#State Management</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>A colleague suggested I learn state management in Angular using either <a href="https://github.com/ngxs/store">NGXS</a> or <a href="https://ngrx.io/">NGRX</a>. He recommended NGXS over NGRX as it seems to be better integrated with Angular.</p>
+<p>These notes documents the steps and learnings.</p>
+<h2>State is really just data</h2>
+<p>A typical web application has the following six types of state:</p>
+<ul>
+<li>Server state</li>
+<li>Persistent state (subset of the server state stored on the client, in memory)</li>
+<li>The URL and router state</li>
+<li>Client state (client state equal to URL and router state)</li>
+<li>Transient client state (client state not in URL)</li>
+<li>Local UI state</li>
+</ul>
+<p>In my head I visualize the above as sets.</p>
+<p>The architecture of state can be shown as</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/0*I3jAfhOZPcF1Mjil." alt="state architecture" width="600"/></p>
+<h2>This is how ngx state management works</h2>
+<p>The architecture of the ngxs state management can be shown as</p>
+<p><img src="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-L9CoGJCq3UCfKJ7RCUg%2F-LZoLccbzvZjhcgtrQ0z%2F-LZoLea7ZgBJTqq73TVX%2Fdiagram.png?generation=1551361553530490&alt=media" alt="state architecture" width="600"/></p>
+<p>Some important definitions are</p>
+<ul>
+<li><em>States</em> are classes that define a state container.</li>
+<li><em>Action types</em> should contain three parts '[Context] verb Entity'. For example '[Zoo] feed Panda'</li>
+<li>
+<ul>
+<li>Actions are normally dispatched from container components such as router pages</li>
+</ul>
+</li>
+<li><em>Events</em> are actions that have already happened and we now need to react to them.</li>
+<li>In computing and telecommunications, the <em>payload</em> is the part of transmitted data that is the actual intended message.</li>
+</ul>
+<h2>Ahh. Let's play with our first example</h2>
+<p>This example is based on <a href="https://appdividend.com/2018/07/03/angular-ngxs-tutorial-with-example-from-scratch/">Angular NGXS Tutorial With Example From Scratch</a>. I needed to combine with <a href="https://ngxs.gitbook.io/ngxs/getting-started/installation">Installation of ngxs.store</a> for the installation.</p>
+<h3>Steps</h3>
+<div class="highlight"><pre><span></span>ng new ng6xs
+<span class="nb">cd</span> ng6xs/
+npm install @ngxs/store --save
+npm install @ngxs/logger-plugin --save --dev
+npm install @ngxs/devtools-plugin --save --dev
+</pre></div>
+
+
+<p>I then tried to serve but got an error. I solved it by updating to "rxjs": "6.3.3" in package.json. See <a href="https://github.com/MarkPieszak/aspnetcore-angular-universal/issues/714">Issue</a></p>
+<div class="highlight"><pre><span></span>ng serve -o
+ng g c components/create --spec<span class="o">=</span><span class="nb">false</span>
+ng g c components/index --spec<span class="o">=</span><span class="nb">false</span>
+npm install bootstrap --save
+</pre></div>
+
+
+<p>It works like it should</p>
+<p><img src="https://appdividend.com/wp-content/uploads/2018/07/Angular-State-Management-Pattern.png" alt="state architecture" width="600"/></p>
+<h2>Quick question for my colleague</h2>
+<ul>
+<li>I only see the Store imported in create.component.ts. Shouldn't it be imported and provided in the app.module.ts? Yes. But its imported and provided by</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">NgxsModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@ngxs/store&#39;</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+    <span class="nx">BrowserModule</span><span class="p">,</span>
+    <span class="nx">NgxsModule</span><span class="p">.</span><span class="nx">forRoot</span><span class="p">([</span>
+      <span class="nx">UserState</span>
+    <span class="p">]),</span>
+</pre></div>
+
+
+<p>My colleague further more recommended to use</p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en-US">redux-devtools</a></li>
+<li>ngxs router plugin</li>
+<li><a href="https://www.npmjs.com/package/@azure/msal-angular">microsoft angular plugin</a></li>
+</ul>
+<p>and to study</p>
+<ul>
+<li><a href="https://medium.com/finiteloop-systems/architect-design-build-scalable-angular-applications-ce336a3c153a">Architect, design &amp; build scalable Angular applications</a></li>
+<li>https://medium.com/@ramandeep.singh.1983/project-structure-for-modern-angular-applications-d00036c9e1ee</li>
+</ul>
+<h2>A second, more advanced example</h2>
+<p>https://github.com/tommythongnguyen/Ngxs-Pizza-Order</p>
+<h2>Questions for my colleague</h2>
+<ol>
+<li>Why does 'schematics' create a XYZStateModule? In the style guide they don't mention StateModule. I would think they should be called XYZState.</li>
+<li>How do I create a 'StateModel that extends Array<Model>' so that I can refer to my list of Models as</li>
+</ol>
+<p>state.models instead of state.XYZStateModule.models</p>
+<ol>
+<li>How do I update state of individual model install of state of array of models. It seems costly to me to update state of list of array in stead of individual array.</li>
+</ol>
+<h1>Resources</h1>
+<ul>
+<li>https://medium.com/finiteloop-systems/architect-design-build-scalable-angular-applications-ce336a3c153a</li>
+<li><a href="https://blog.angularindepth.com/container-components-with-angular-11e4200f8df">container-components-with-angular</a></li>
+</ul>
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <ul class="col-sm-6 list-inline">
+          <li class="list-inline-item"><a href="../archives.html">Archives</a></li>
+          <li class="list-inline-item"><a href="../categories.html">Categories</a></li>
+          <li class="list-inline-item"><a href="../tags.html">Tags</a></li>
+        </ul>
+        <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

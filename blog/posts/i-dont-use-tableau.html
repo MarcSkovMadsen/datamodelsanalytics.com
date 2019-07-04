@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>I don't use Tableau because... | Data, Models and Analytics Blog
+</title>
+  <link rel="canonical" href="../posts/i-dont-use-tableau.html">
+
+  <link rel="alternate" type="application/atom+xml" href="https://datamodelsanalytics.com/blog/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="https://datamodelsanalytics.com/blog/feeds/{slug}.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="../theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../theme/css/pygments/vs.min.css">
+  <link rel="stylesheet" href="../theme/css/style.css">
+
+
+<meta name="description" content="Tableau can do amazing things but i've decided to avoid using it unless i'm in a hurry because I always end up having problems documenting, testing, refactoring and further developing.">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="..">
+            <img class="img-fluid" src=../images/home-bg.jpg alt="Data, Models and Analytics Blog">
+          </a>
+        </div>
+        <div class="col-sm-8">
+          <h1 class="title"><a href="..">Data, Models and Analytics Blog</a></h1>
+          <p class="text-muted">By Marc Skov Madsen, PhD (Math), CFA®, Lead Data Scientist Developer at Ørsted</p>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="fa fa-home" href="https://datamodelsanalytics.com" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-linkedin" href="https://www.linkedin.com/in/marcskovmadsen/" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-facebook" href="https://www.facebook.com/marc.skov.madsen" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-twitter" href="https://twitter.com/MarcSkovMadsen " target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-github" href="https://github.com/MarcSkovMadsen/ " target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-stack-overflow" href="http://stackoverflow.com/u/10227927" target="_blank"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>I don't use Tableau because...
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+      <li class="list-inline-item text-muted" title="2018-12-23T00:00:00+01:00">
+        <i class="fa fa-clock-o"></i>
+        sø 23 december 2018
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="../category/i-dont-use.html">I don't use...</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="../tag/tableau.html">#Tableau</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>I'm currently considering moving away from using Tableau as my front end dash board technology. I've been using it for the last 4 years.</p>
+<p>I'm very happy about the rapid development of impressive dashboards on almost any numerical data source but</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>The possible layout of my dashboard very much depend on how my data source is structured</dt>
+<dd><ul class="first last">
+<li>I'm very unhappy about sometimes meeting a wall where you just can't do what you find out is required after some iterations of the dashboard. At least not without starting all over again re-building the data source and redesigning the dashboard.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>I cannot build components that are tested, documented and reusable</dt>
+<dd><ul class="first last">
+<li>Currently i'm only able to do manual testing. Thus when ever I change something I have to manually test all over again.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>I cannot efficiently do my ETL in Python and serve it via a REST API.</dt>
+<dd><ul class="first last">
+<li>I most often end up in preparing the data source in MSSQL or directly in Tableau and this is costly to maintain.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="section" id="evaluation">
+<h2>Evaluation</h2>
+<p>For me the current alternative is web development in Django + Angular + Plotly</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="49%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Item</th>
+<th class="head">Tableau</th>
+<th class="head">Django + Angular + Plotly</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Development</td>
+<td>Fast but not fully customizable</td>
+<td>Slow but fully customizable.</td>
+</tr>
+<tr><td>Developers</td>
+<td>Not Satisfactory - Cannot use Python Data Scientists</td>
+<td>Satisfactory - Can use Python Data Scientists</td>
+</tr>
+<tr><td>Documentation</td>
+<td>Not Satisfactory</td>
+<td>Satisfactory</td>
+</tr>
+<tr><td>Test</td>
+<td>Not Satisfactory</td>
+<td>Satisfactory</td>
+</tr>
+<tr><td>Operation</td>
+<td>Satisfactory</td>
+<td>Satisfactory</td>
+</tr>
+<tr><td>Maintenance</td>
+<td>Not Satisfactory</td>
+<td>Satisfactory</td>
+</tr>
+<tr><td>Cost</td>
+<td>High annual license costs</td>
+<td>No license costs</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <ul class="col-sm-6 list-inline">
+          <li class="list-inline-item"><a href="../archives.html">Archives</a></li>
+          <li class="list-inline-item"><a href="../categories.html">Categories</a></li>
+          <li class="list-inline-item"><a href="../tags.html">Tags</a></li>
+        </ul>
+        <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

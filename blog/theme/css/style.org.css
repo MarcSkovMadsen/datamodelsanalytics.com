@@ -9,7 +9,7 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #333;
 }
 
 a:focus,
@@ -35,8 +35,6 @@ hr {
 .header,
 .footer {
   padding: 1.5rem 0 .5rem;
-  color: #ffff;
-  background-color: #7b1fa2;
 }
 
 .header {
@@ -64,8 +62,7 @@ hr {
 }
 
 .main {
-  background-color: #303030;
-  color: #fff;
+  background-color: #fff;
   padding: 1.5rem 0;
 }
 
@@ -127,8 +124,4 @@ hr {
   .teaser header li:not(:last-child) {
     margin-right: 10px;
   }
-}
-
-.text-muted {
-  color: #fff!important;
 }

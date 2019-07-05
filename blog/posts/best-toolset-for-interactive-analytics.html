@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>The best toolset for interactive analytics? | Data, Models and Analytics Blog
+</title>
+  <link rel="canonical" href="../posts/best-toolset-for-interactive-analytics.html">
+
+  <link rel="alternate" type="application/atom+xml" href="https://datamodelsanalytics.com/blog/feeds/all.atom.xml" title="Full Atom Feed">
+  <link rel="alternate" type="application/atom+xml" href="https://datamodelsanalytics.com/blog/feeds/{slug}.atom.xml" title="Categories Atom Feed">
+
+
+  <link rel="stylesheet" href="../theme/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../theme/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../theme/css/pygments/native.min.css">
+  <link rel="stylesheet" href="../theme/css/style.css">
+
+
+<meta name="description" content="What's the best toolset for developing interactive analytics and data visualization?">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="..">
+            <img class="img-fluid" src=../images/home-background.jpg alt="Data, Models and Analytics Blog">
+          </a>
+        </div>
+        <div class="col-sm-8">
+          <h1 class="title"><a href="..">Data, Models and Analytics Blog</a></h1>
+          <p class="text-muted">By Marc Skov Madsen, PhD (Math), CFA®, Lead Data Scientist Developer at Ørsted</p>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="fa fa-home" href="https://datamodelsanalytics.com" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-linkedin" href="https://www.linkedin.com/in/marcskovmadsen/" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-facebook" href="https://www.facebook.com/marc.skov.madsen" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-twitter" href="https://twitter.com/MarcSkovMadsen " target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-github" href="https://github.com/MarcSkovMadsen/ " target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-stack-overflow" href="http://stackoverflow.com/u/10227927" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-bicycle" href="https://www.strava.com/athletes/7586499" target="_blank"></a></li>
+            <li class="list-inline-item"><a class="fa fa-bolt" href="https://zwiftpower.com/profile.php?z=81779" target="_blank"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container">
+      <h1>The best toolset for interactive analytics?
+</h1>
+      <hr>
+<article class="article">
+  <header>
+    <ul class="list-inline">
+      <li class="list-inline-item text-muted" title="2019-05-07T06:01:00+02:00">
+        <i class="fa fa-clock-o"></i>
+        ti 07 maj 2019
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="../category/analytics.html">analytics</a>
+      </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="../tag/interactive-analytics.html">#interactive analytics</a>      </li>
+    </ul>
+  </header>
+  <div class="content">
+    <p>I'm creating interactive analytics and data visualizations for my users all the time. And I'm a bit frustrated as <strong>my current toolsets are not efficient</strong>.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="https://dash-gallery.plotly.host/dash-manufacture-spc-dashboard/"><img alt="Dash manufactoring dashboard example" src="../images/dash-manufactoring.png" style="width: 80%;" /></a>
+</div>
+<p>Currently I have too supported toolsets to choose from.</p>
+<ul class="simple">
+<li>BI Tools like Power BI and Tableau</li>
+<li>Frontend web development using Angular</li>
+</ul>
+<p>Both are impressive&nbsp;technologies with a lot of pros.&nbsp;But both keeps frustrating me over and over again because of their cons.</p>
+<p><strong>I need something in between</strong> and I'm currently seeing Jupyter Notebooks for prototyping and Plotly Dash for production as the best &quot;in between&quot; solution.</p>
+<p>You can take a look at impressive dashboards using Dash in the <a class="reference external" href="https://dash-gallery.plotly.host/Portal/">Dash Gallery</a></p>
+<div class="section" id="why-tableau-ends-up-frustrating-me">
+<h2>Why Tableau ends up frustrating me.</h2>
+<p>In Tableau you can do rapid prototyping and release to production using drag and drop. But</p>
+<ul class="simple">
+<li>since you don't get code files it often ends up being difficult to develop and maintain in the long run.</li>
+<li>you often end up just not being able to do exactly what is needed or have to use some unmaintainable <em>hack</em> to solve the problem.</li>
+<li>Tableau is also costly in it self and yet another technology to master, so often the business analyst, data engineer and data scientist cannot work with the same technology.</li>
+</ul>
+<div class="figure align-center">
+<img alt="Tableau dashboard example" src="../images/tableau-dashboard-example.png" style="width: 60%;" />
+</div>
+</div>
+<div class="section" id="why-angular-ends-up-frustrating-me">
+<h2>Why Angular ends up frustrating me.</h2>
+<p>With Angular you have code and all the tools at hand for tests, documentation, refactoring, writing advanced models etc. But</p>
+<ul class="simple">
+<li>you end up having two stacks of tools. One for the backend and one for the front end.</li>
+<li>you have to spend a lot of time integrating and keeping the backend and front end in sync.</li>
+<li>you probably develop some of the same business logic in the two stacks.</li>
+<li>you have to spend time on customizing Angular for data visualization as it not a dedicated solution for that.</li>
+<li>your team now probably needs additional backend and front end resources.</li>
+</ul>
+<p>The setup is now very complex and the development/ maintenance cycle is very slow.</p>
+<p>We just needed a dashboard for internal use and not a complex web application for thousands of users!</p>
+</div>
+<div class="section" id="i-need-something-in-between">
+<h2>I need something in between</h2>
+<p>I need something in between with the possibility of</p>
+<ul class="simple">
+<li>Presenting data in a efficient, appealing and interactive way.</li>
+<li>Ability to integrate into web sites to combine with other technologies like Angular when it's really needed.</li>
+<li>Keep the technology stack as simple as possible as i'm not working in large teams.</li>
+<li><dl class="first docutils">
+<dt>Developing in Python mainly as this</dt>
+<dd><ul class="first last">
+<li>is the common language for people working with data, models and analytics.</li>
+<li>has a vast eco-system for data analysis and visualization.</li>
+<li>A fast develop-test-build-release-maintain cycle</li>
+<li>can be refactored, structured into modules, documented, tested etc.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>I really think we could speed up our development time and do valuable stuff based on this.</p>
+</div>
+<div class="section" id="what-would-be-my-preferred-toolset">
+<h2>What would be my preferred toolset?</h2>
+<p>My preferred toolset and workflow would be</p>
+<ul class="simple">
+<li>Python for data extraction, transformation and loading.</li>
+<li>Jupyter Notebooks for rapid prototyping of Dashboards</li>
+<li>Dash for production Dashboards.</li>
+</ul>
+<p>When I really need something more advanced for specific use cases I could add in</p>
+<ul class="simple">
+<li>Django as backend when multiple dashboards, security, admin stuff, forms, data download etc. is needed.</li>
+<li>Angular when advanced, custom front end development is really needed.</li>
+</ul>
+<img alt="" src="../images/jupyter-notebook-icon.png" style="height: 60px;" />
+<img alt="" src="../images/plotly-dash-icon.png" style="height: 60px;" />
+<img alt="" src="../images/python-django-logo.jpg" style="height: 60px;" />
+<img alt="" src="../images/angular-icon.png" style="height: 60px;" />
+</div>
+<div class="section" id="why-jupyter-notebooks">
+<h2>Why Jupyter Notebooks?</h2>
+<p>A Jupyter Notebook is the common tool for data exploration and prototyping among data engineers and data scientists.</p>
+</div>
+<div class="section" id="why-dash">
+<h2>Why Dash?</h2>
+<p>With Dash you can develop impressive, interactive, web based dashboards in Python only. Dash creates all the frontend html, css and javascript for you. Dash is focused on rapid development on interactive visualizations.</p>
+<p>In Dash you just need to write Python functions to extract, transform and load data and they will be called automatically whenever the user interacts with your dashboard.</p>
+<p>Dash can be simple because you can develop an advanced&nbsp;dashboard in just one python file if you like.</p>
+<p>Dash is a web application and can easily be deployed.</p>
+<p>Dash can be combined with for example Django backend and Angular frontend if your requirements are to build a complex application where you need REST APIs, Logins/ Security, SPAs&nbsp;for some of the parts.</p>
+<iframe width="100%" height="1100 px" src=" https://dash-gallery.plotly.host/dash-wind-streaming/" frameborder="0" allowfullscreen style="-webkit-transform:scale(1);-moz-transform-scale(1);"
+></iframe><p>For more examples take a look at the impressive dashboards in the <a class="reference external" href="https://dash-gallery.plotly.host/Portal/">Dash Gallery</a> . There are links to the code as well.</p>
+</div>
+<div class="section" id="why-not-just-go-ahead">
+<h2>Why not just go ahead</h2>
+<p>Well</p>
+<ul class="simple">
+<li>these are not officially supported solutions and</li>
+<li>these are technologies under development with rough edges.</li>
+</ul>
+</div>
+
+  </div>
+</article>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+       <ul class="col-sm-6 list-inline">
+          <li class="list-inline-item"><a href="../archives.html">Archives</a></li>
+          <li class="list-inline-item"><a href="../categories.html">Categories</a></li>
+          <li class="list-inline-item"><a href="../tags.html">Tags</a></li>
+        </ul>
+        <p class="col-sm-6 text-sm-right text-muted">
+          Generated by <a href="https://github.com/getpelican/pelican" target="_blank">Pelican</a> / <a href="https://github.com/nairobilug/pelican-alchemy" target="_blank">&#x2728;</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

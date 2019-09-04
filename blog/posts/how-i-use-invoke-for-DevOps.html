@@ -7,9 +7,9 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>analytics Articles | Data, Models and Analytics Blog
+  <title>How I use Invoke to structure and document my DevOps process | Data, Models and Analytics Blog
 </title>
-  <link rel="canonical" href="../category/analytics.html">
+  <link rel="canonical" href="../posts/how-i-use-invoke-for-DevOps.html">
 
   <link rel="alternate" type="application/atom+xml" href="https://datamodelsanalytics.com/blog/feeds/all.atom.xml" title="Full Atom Feed">
   <link rel="alternate" type="application/atom+xml" href="https://datamodelsanalytics.com/blog/feeds/{slug}.atom.xml" title="Categories Atom Feed">
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../theme/css/style.css">
 
 
-<meta name="description" content="This blog exists to document, share and discuss">
+<meta name="description" content="An article on how I use Invoke to structure and document my DevOps process">
 </head>
 
 <body>
@@ -53,27 +53,56 @@
 
   <div class="main">
     <div class="container">
-      <h1>analytics Articles
+      <h1>How I use Invoke to structure and document my DevOps process
 </h1>
       <hr>
-<article class="row teaser">
-  <header class="col-sm-4 text-muted">
-    <ul>
-      <li title="2019-05-07T06:01:00+02:00">
+<article class="article">
+  <header>
+    <ul class="list-inline">
+      <li class="list-inline-item text-muted" title="2019-09-05T06:01:00+02:00">
         <i class="fa fa-clock-o"></i>
-        ti 07 maj 2019
+        to 05 september 2019
       </li>
-      <li>
+      <li class="list-inline-item">
         <i class="fa fa-folder-open-o"></i>
-        <a href="../category/analytics.html">analytics</a>
+        <a href="../category/devops.html">DevOps</a>
       </li>
+      <li class="list-inline-item">
+        <i class="fa fa-files-o"></i>
+        <a href="../tag/devops.html">#DevOps</a>,         <a href="../tag/invoke.html">#Invoke</a>,         <a href="../tag/python.html">#Python</a>      </li>
     </ul>
   </header>
-  <div class="col-sm-8">
-    <h4 class="title"><a href="../posts/best-toolset-for-interactive-analytics.html">The best toolset for interactive analytics?</a></h4>
-    <div class="content">
-      What's the best toolset for developing interactive analytics and data visualization?
-    </div>
+  <div class="content">
+    <p>There are many ways to structure and document your DevOps process. A fundamental component of my DevOps process is a robust command line interface. My preferred way of building a command line interface is using the Python Package called <a class="reference external" href="http://www.pyinvoke.org/">Invoke</a>.</p>
+<p>Invoke provides me with a <strong>--list</strong> of available commands</p>
+<div class="figure align-center">
+<img alt="Use Invoke --list to list the available command" src="../images/invoke-list.png" style="width: 100%;" />
+</div>
+<p>Invoke also provides me with additional <strong>--help</strong> text</p>
+<div class="figure align-center">
+<img alt="Use Invoke --help to get help text" src="../images/invoke-help.png" style="width: 100%;" />
+</div>
+<p>In order to get the above command line interface I just need to define Python functions with docstrings and mark them with the Invoke &#64;task annotation.</p>
+<div class="figure align-center">
+<img alt="Invoke tasks are created using the &#64;task annotation" src="../images/invoke-task-annotation.png" style="width: 100%;" />
+</div>
+<p>Some reasons to use Invoke as your CLI framework are:</p>
+<ul class="simple">
+<li>Configuration management through use of environment variables, arguments, and config files</li>
+<li>Automatic help menus and argument parsing with validation</li>
+<li>Tasks can be run from any directory under the project root</li>
+<li>Invoke and Python can be more easily used in a cross-platform environment</li>
+<li>Easier debugging using the Python debugger and more flexible printing</li>
+<li>Python is more widely known and understood among developers</li>
+<li>Python gives access to a wide variety of packages to use</li>
+</ul>
+<p>I can even use the command directly from the command palette in VS Code using the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=dchanco.vsc-invoke">VS Code Invoke Extension</a></p>
+<div class="figure align-center">
+<img alt="Using Invoke in VS Code via the command palette" src="../images/invoke-vscode.png" style="width: 100%;" />
+</div>
+<p>For an example of using Invoke (and why not to use Make) see this <a class="reference external" href="https://interrupt.memfault.com/blog/building-a-cli-for-firmware-projects#why-invoke-and-Python">article</a>.</p>
+<p>Invoke is very, very powerfull and robust. For the full details see <a class="reference external" href="http://www.pyinvoke.org/">http://www.pyinvoke.org/</a>.</p>
+
   </div>
 </article>
     </div>

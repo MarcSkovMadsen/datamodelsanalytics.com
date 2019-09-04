@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data, Models and Analytics Blog - DevOps</title><link href="https://datamodelsanalytics.com/blog/" rel="alternate"></link><link href="https://datamodelsanalytics.com/blog%5Cfeeds/devops.atom.xml" rel="self"></link><id>https://datamodelsanalytics.com/blog/</id><updated>2019-09-05T06:01:00+02:00</updated><subtitle>By Marc Skov Madsen, PhD (Math), CFA®, Lead Data Scientist Developer at Ørsted</subtitle><entry><title>How I use Invoke to structure and document my DevOps process</title><link href="https://datamodelsanalytics.com/blog%5Cposts/how-i-use-invoke-for-DevOps.html" rel="alternate"></link><published>2019-09-05T06:01:00+02:00</published><updated>2019-09-05T06:01:00+02:00</updated><author><name>Marc Skov Madsen</name></author><id>tag:datamodelsanalytics.com,2019-09-05:/blog\posts/how-i-use-invoke-for-DevOps.html</id><summary type="html">&lt;p class="first last"&gt;An article on how I use Invoke to structure and document my DevOps process&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;There are many ways to structure and document your DevOps process. A fundamental component of my DevOps process is a robust command line interface. My preferred way of building a command line interface is using the Python Package called &lt;a class="reference external" href="http://www.pyinvoke.org/"&gt;Invoke&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Invoke provides me with a &lt;strong&gt;--list&lt;/strong&gt; of available commands&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Use Invoke --list to list the available command" src="../images/invoke-list.png" style="width: 100%;" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Invoke also provides me with additional &lt;strong&gt;--help&lt;/strong&gt; text&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Use Invoke --help to get help text" src="../images/invoke-help.png" style="width: 100%;" /&gt;
+&lt;/div&gt;
+&lt;p&gt;In order to get the above command line interface I just need to define Python functions with docstrings and mark them with the Invoke &amp;#64;task annotation.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Invoke tasks are created using the &amp;#64;task annotation" src="../images/invoke-task-annotation.png" style="width: 100%;" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Some reasons to use Invoke as your CLI framework are:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Configuration management through use of environment variables, arguments, and config files&lt;/li&gt;
+&lt;li&gt;Automatic help menus and argument parsing with validation&lt;/li&gt;
+&lt;li&gt;Tasks can be run from any directory under the project root&lt;/li&gt;
+&lt;li&gt;Invoke and Python can be more easily used in a cross-platform environment&lt;/li&gt;
+&lt;li&gt;Easier debugging using the Python debugger and more flexible printing&lt;/li&gt;
+&lt;li&gt;Python is more widely known and understood among developers&lt;/li&gt;
+&lt;li&gt;Python gives access to a wide variety of packages to use&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I can even use the command directly from the command palette in VS Code using the &lt;a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=dchanco.vsc-invoke"&gt;VS Code Invoke Extension&lt;/a&gt;&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Using Invoke in VS Code via the command palette" src="../images/invoke-vscode.png" style="width: 100%;" /&gt;
+&lt;/div&gt;
+&lt;p&gt;For an example of using Invoke (and why not to use Make) see this &lt;a class="reference external" href="https://interrupt.memfault.com/blog/building-a-cli-for-firmware-projects#why-invoke-and-Python"&gt;article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Invoke is very, very powerfull and robust. For the full details see &lt;a class="reference external" href="http://www.pyinvoke.org/"&gt;http://www.pyinvoke.org/&lt;/a&gt;.&lt;/p&gt;
+</content><category term="DevOps"></category><category term="Invoke"></category><category term="Python"></category></entry></feed>
